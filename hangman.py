@@ -1,8 +1,13 @@
 # Choose a word bewtween 2 - 8 letters long.
+## In a for loop until a good word is found (i.e. the word is 2-8 characters long)
+## Request a word from https://random-word-api.herokuapp.com/word 
+## if word length is between 2-8, then store the word in variable: word
+## else continue back to the for loop
+
+# Convert the word in the variable word to a list named actualWord
 
 #Hi
 
-# Create a list of letters by taking each letter from the word and putting it in the list one by one. Name this list actualWord
 
 # create a list that is the same length as the word but filled with underscores. Name this list secretWord
 
