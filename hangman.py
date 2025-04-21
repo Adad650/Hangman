@@ -1,6 +1,6 @@
 # Choose a word bewtween 2 - 8 letters long.
 
-
+#Hi
 
 # Create a list of letters by taking each letter from the word and putting it in the list one by one. Name this list actualWord
 
