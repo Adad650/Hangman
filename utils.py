@@ -7,12 +7,17 @@ import requests
 ## store the word in variable: wordPickedFromURL
 
 def getWordFromAPI():
-    lenOfWord = random.randint(2, 8)
-    url = f'https://random-word-api.herokuapp.com/word?length={lenOfWord}'
-    wordURLResponse = requests.get(url)
-    wordData = wordURLResponse.json()
-    wordPickedFromURL = wordData[0]
-    return wordPickedFromURL
+    try:
+        lenOfWord = random.randint(2, 8)
+        url = f'https://random-word-api.herokuapp.com/word?length={lenOfWord}'
+        wordURLResponse = requests.get(url)
+        wordData = wordURLResponse.json()
+        wordPickedFromURL = wordData[0]
+        return wordPickedFromURL.lower
+    except: 
+        return ("hello")
+
+
 
 def convertWordToSecret(realWord):
     hiddenWord = []

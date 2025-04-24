@@ -1,11 +1,11 @@
-import re
 import utils
 
 # initialize all variables
 
 lives = 6
 secretWord = []
-
+userGuessedWordRight= False
+userRightGuesses = 0
 # Choose a word bewtween 2 - 8 letters long.
 
 uncutWord = utils.getWordFromAPI()
@@ -23,10 +23,15 @@ secretWord = utils.convertWordToSecret(actualWord)
 # The user puts it there first guess. Check the length of the users guess to ensure that it is 1 letter
 
 print (f'Welcome to Hangman you have a {len(secretWord)} letter long word\n{secretWord}')
-userGuess = str(input("Enter You Guess(pls)"))
-if len(userGuess) > 1:
-    print ("No")
-    exit()
+
+
+
+print ("        _________           \n," \
+"       |      |   \n" \
+"        |      o\n" \
+"        |     -|-\n" \
+"        |      /\ \n" \
+"     ____________\n")
 
 # Make a for loop to compare the letter that the user guessed to each letter in the list
 ## Within the for loop, do the following:
@@ -39,6 +44,35 @@ if len(userGuess) > 1:
 ## Break when the user runs out of guesses (i.e. when Lives = 0)
 ## If user is incorrect Lives -= 1
 ## Print secretWord again and lives left
+
+while (userGuessedWordRight == False) or (lives == 0):
+    userGuess = str(input("Enter You Guess(pls)--  ")).lower()
+    letterRightOrNot = False
+    if len(userGuess) >= 2:
+        print ("No")
+        break
+    for b in range(len(actualWord)):
+        if userGuess ==  actualWord[b]:
+            secretWord[b] = userGuess
+            userRightGuesses += 1
+            letterRightOrNot = True
+    if letterRightOrNot == False:
+        lives -= 1
+    print (secretWord)
+    print (f"Lives remaining-- {lives}")
+    if lives == 0:
+        print ("You Lost :P")
+        break
+    if userRightGuesses == len(secretWord):
+        print ('You won!')
+        userGuessedWordRight = True
+
+print (":P")
+    
+
+    
+        
+
 
 
 #If the user fails to guess the word, computerPermissionToBullyUser = True
