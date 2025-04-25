@@ -25,13 +25,12 @@ secretWord = utils.convertWordToSecret(actualWord)
 print (f'Welcome to Hangman you have a {len(secretWord)} letter long word\n{secretWord}')
 
 
+   
 
-print ("        _________           \n," \
-"       |      |   \n" \
-"        |      o\n" \
-"        |     -|-\n" \
-"        |      /\ \n" \
-"     ____________\n")
+
+
+
+
 
 # Make a for loop to compare the letter that the user guessed to each letter in the list
 ## Within the for loop, do the following:
@@ -61,11 +60,12 @@ while (userGuessedWordRight == False) or (lives == 0):
     print (secretWord)
     print (f"Lives remaining-- {lives}")
     if lives == 0:
-        print ("You Lost :P")
+        print (f"You Lost :P the word was{actualWord}")
         break
     if userRightGuesses == len(secretWord):
         print ('You won!')
         userGuessedWordRight = True
+
 
 print (":P")
     
