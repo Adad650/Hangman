@@ -24,14 +24,6 @@ secretWord = utils.convertWordToSecret(actualWord)
 
 print (f'Welcome to Hangman you have a {len(secretWord)} letter long word\n{secretWord}')
 
-
-   
-
-
-
-
-
-
 # Make a for loop to compare the letter that the user guessed to each letter in the list
 ## Within the for loop, do the following:
 ## Run the for loop for the length of the list
